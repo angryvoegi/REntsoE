@@ -22,7 +22,7 @@ set_apikey <- function(key) {
     stopifnot("Key has to be a string" = is.character(key))
     Sys.setenv("ENTSOE_KEY" = key)
   } else {
-    print("Already set an API Key for the ENTSO-E platform...")
+    message("Already set an API Key for the ENTSO-E platform...")
   }
 }
 
