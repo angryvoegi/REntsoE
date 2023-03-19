@@ -148,15 +148,15 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
                       in_Domain, out_Domain, registeredResource, businessType,
                       periodStart, periodEnd) {
   if (identical(Sys.getenv("ENTSOE_KEY"), "")) {
-    print("Forgot to set the API key? Call it with `set_apikey`!")
+    message("Forgot to set the API key? Call it with `set_apikey`!")
     stop()
   }
   fArgs <- as.list(environment())
-  print("Building URL...")
+  message("Building URL...")
   url <- do.call(build_url, fArgs)
-  print("Built URL, sendig request...")
+  message("Built URL, sendig request...")
   resp <- httr::GET(url)
-  print("Got data, converting it...")
+  message("Got data, converting it...")
   convResp <- convert_xml(resp)
   onlyTS <- only_ts(convResp)
   dates <- date_from_lst(onlyTS)
@@ -240,5 +240,5 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
   final <- final %>%
     mutate_if(is.character, as.numeric)
   return(final)
-  print("Finished")
+  message("Finished")
 }
