@@ -44,7 +44,6 @@ type_from_list <- function(rlst, psrtype) {
 #' @param rlst rlst raw list, converted xml response to list
 #'
 #' @return named list with the data
-#' @export
 get_params <- function(rlst) {
   type <- rlst$type %>%
     unlist()
