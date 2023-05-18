@@ -7,7 +7,7 @@
 type_from_list(rlst, psrtype)
 }
 \arguments{
-\item{rlst}{rlst raw list, converted xml response to list}
+\item{rlst}{Rlst raw list, converted xml response to list}
 
 \item{psrtype}{PSR Type from codeList$AssetTypeList (excel data)}
 }

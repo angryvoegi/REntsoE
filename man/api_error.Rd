@@ -7,7 +7,7 @@
 api_error(req)
 }
 \arguments{
-\item{req}{response from the api call}
+\item{req}{Response from the API call}
 }
 \description{
 Function checks the API status code

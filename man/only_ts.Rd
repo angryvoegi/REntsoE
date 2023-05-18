@@ -7,10 +7,10 @@
 only_ts(rlst)
 }
 \arguments{
-\item{rlst}{raw list, converted xml response}
+\item{rlst}{Raw list, converted xml response}
 }
 \value{
-only the lists which are named TimeSeries
+Only the lists which are named TimeSeries
 }
 \description{
 Function which only return "TimeSeries" objects
@@ -20,5 +20,5 @@ The response from the Entso-E API has a lot of
 different elements called "TimeSeries". These elements
 inlcude all the necessary information like point and
 value. This function extracts all the elements with the
-name "TimeSeries".#'
+name "TimeSeries".
 }

@@ -7,12 +7,12 @@
 append_location(finishedDF, rawdat = rawdat)
 }
 \arguments{
-\item{df}{final dataframe with the aggregated data}
+\item{df}{Final dataframe with the aggregated data}
 
-\item{rawdat}{locations as text not EIC}
+\item{rawdat}{Locations as text not EIC}
 }
 \value{
-dataframe
+Dataframe
 }
 \description{
 Function calls the `get_Locations` function to get the country/location name

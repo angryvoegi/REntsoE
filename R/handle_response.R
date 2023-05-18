@@ -9,12 +9,11 @@
 #' different elements called "TimeSeries". These elements
 #' inlcude all the necessary information like point and
 #' value. This function extracts all the elements with the
-#' name "TimeSeries".#'
+#' name "TimeSeries".
 #'
-#' @param rlst raw list, converted xml response
+#' @param rlst Raw list, converted xml response
 #'
-#' @return only the lists which are named TimeSeries
-#' @export
+#' @return Only the lists which are named TimeSeries
 only_ts <- function(rlst) {
   tmp <- rlst[which(names(rlst) == "TimeSeries")]
   return(tmp)
@@ -35,11 +34,10 @@ only_ts <- function(rlst) {
 #'
 #' @param start StartInterval from the API response
 #' @param n_points Number of datapoints
-#' @param period periodicity of the response
+#' @param period Periodicity of the response
 #'
-#' @return date sequence from start with length.out = n_points
+#' @return Date sequence from start with length.out = n_points
 #' and period = periodicity
-#' @export
 points_to_time <- function(start, n_points, period) {
   ts_start <- start %>%
     as.POSIXct(., tryFormats = c(
@@ -76,7 +74,6 @@ points_to_time <- function(start, n_points, period) {
 #'
 #' @return Returns a list of the date sequence, depending on the number
 #' of columns the API response had
-#' @export
 date_from_lst <- function(lst_ts) {
   dates_lst <- lapply(lst_ts, function(x) {
     start <- x$Period$timeInterval$start[[1]]
@@ -106,8 +103,7 @@ date_from_lst <- function(lst_ts) {
 #'
 #' @param lst_ts TimeSeries object from the function only_ts
 #'
-#' @return list with only values
-#' @export
+#' @return List with only values
 values_from_lst <- function(lst_ts) {
   # lst_ts = dat2
   vals_lst <- lapply(lst_ts, function(x) {

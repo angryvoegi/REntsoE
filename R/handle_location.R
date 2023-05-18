@@ -14,10 +14,9 @@
 #' get_Locations(rawdat, eicLoc = eicLoc)
 #'
 #' @param rawdat Converted XML response to list
-#' @param eicLoc
+#' @param eicLoc Dataframe that comes with the package (see eicLoc)
 #'
-#' @return returns a vector with the locations
-#' @export
+#' @return Returns a vector with the locations
 get_Locations <- function(rawdat, eicLoc) {
   tmp <- rawdat[names(rawdat) == "TimeSeries"]
   rawLoc <- lapply(tmp, function(x) {
@@ -39,11 +38,10 @@ get_Locations <- function(rawdat, eicLoc) {
 #' @usage
 #' append_location(finishedDF, rawdat = rawdat)
 #'
-#' @param df final dataframe with the aggregated data
-#' @param rawdat locations as text not EIC
+#' @param df Final dataframe with the aggregated data
+#' @param rawdat Locations as text not EIC
 #'
-#' @return dataframe
-#' @export
+#' @return Dataframe
 append_location <- function(df, rawdat) {
   col_names <- colnames(df)
   df <- cbind(df, data.frame(Location = get_Locations(rawdat, eicLoc = eicLoc)))

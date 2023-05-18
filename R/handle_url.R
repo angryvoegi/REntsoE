@@ -26,7 +26,6 @@
 #'
 #' @return
 #' String of url to make request
-#' @export
 #'
 #' @usage
 #' build_url(documentType = "A65", processType = "A16",
@@ -39,6 +38,10 @@ build_url <- function(documentType, processType, contract_MarketAgreement.Type,
                       periodStart, periodEnd) {
   base_url <- "https://web-api.tp.entsoe.eu/api?"
   token <- Sys.getenv("ENTSOE_KEY")
+  if(is.na(token) || token == ""){
+    message("No API token found. Set your token with the function `set_apikey`.")
+    stop()
+  }
   base_df <- data.frame(matrix(nrow = 13, ncol = 1))
   rownames(base_df) <- c(
     "documentType", "processType", "contract_MarketAgreement.Type",

@@ -15,7 +15,7 @@ library(dplyr)
 #' each time. The key is stored in the `ENTSOE_KEY` environment
 #' variable. It also checks if you already set a key.
 #'
-#' @param key This is the ENSTO-E API Key
+#' @param key The ENSTO-E API Key
 #' @export
 set_apikey <- function(key) {
   if (identical(Sys.getenv("ENTSOE_KEY"), "")) {
@@ -43,8 +43,7 @@ set_apikey <- function(key) {
 #'
 #' @param xml Response object from the api call
 #'
-#' @return list of response
-#' @export
+#' @return List of response
 convert_xml <- function(xml) {
   # convert xml to list
   tmp <- httr::content(xml, encoding = "UTF-8") %>%
@@ -68,17 +67,21 @@ convert_xml <- function(xml) {
 #' if the response is valid or not. If not, a message is
 #' displayed
 #'
-#' @param req response from the api call
-#' @export
+#' @param req Response from the API call
 api_error <- function(req) {
   stat_code <- req$status_code
   if (stat_code == 503) {
     cat("Service unavailable. Try again in a few minutes and check the website
           https://transparency.entsoe.eu/")
+    return(NA)
   } else if (stat_code == 404) {
     cat("Something went wrong.")
+    return(NA)
   } else if (stat_code == 400) {
     cat("Bad request.")
+    return(NA)
+  } else if (stat_code == 200) {
+    cat("Good request.")
   }
 }
 

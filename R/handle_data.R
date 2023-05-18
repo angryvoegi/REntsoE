@@ -2,7 +2,7 @@
 #' Split columns based on parameters
 #'
 #' @description
-#' Function pivot widers dataframe based on parameters.
+#' Function converts long to wide dataframe based on parameters.
 #'
 #' @details
 #' With the `pivot_wider` function the data is put into wide format
@@ -12,12 +12,10 @@
 #' @usage
 #' split_columns(df = temp_df, rawdat = converted_response)
 #'
-#' @param df Half-finised dataframe
+#' @param df Half-finished dataframe
 #' @param rawdat Raw data, as list
 #'
-#' @return split dataframe
-#'
-#' @export
+#' @return Split dataframe
 split_columns <- function(df, rawdat) {
   params <- get_params(rawdat)
   if (!is.null(params$ProcessType) & !is.null(params$ObjectAggregation)) {

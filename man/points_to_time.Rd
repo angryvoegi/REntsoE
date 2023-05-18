@@ -11,10 +11,10 @@ points_to_time(start, n_points, period)
 
 \item{n_points}{Number of datapoints}
 
-\item{period}{periodicity of the response}
+\item{period}{Periodicity of the response}
 }
 \value{
-date sequence from start with length.out = n_points
+Date sequence from start with length.out = n_points
 and period = periodicity
 }
 \description{

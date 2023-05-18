@@ -7,15 +7,15 @@
 split_columns(df = temp_df, rawdat = converted_response)
 }
 \arguments{
-\item{df}{Half-finised dataframe}
+\item{df}{Half-finished dataframe}
 
 \item{rawdat}{Raw data, as list}
 }
 \value{
-split dataframe
+Split dataframe
 }
 \description{
-Function pivot widers dataframe based on parameters.
+Function converts long to wide dataframe based on parameters.
 }
 \details{
 With the `pivot_wider` function the data is put into wide format

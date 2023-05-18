@@ -7,12 +7,12 @@
 set_colnames(df, rawdat)
 }
 \arguments{
-\item{df}{dataframe with date, value and possible more information}
+\item{df}{Dataframe with date, value and possible more information}
 
 \item{rawdat}{Converted XML response to list}
 }
 \value{
-returns dataframe with set colnames
+Returns dataframe with set colnames
 }
 \description{
 Function sets colnames based on parameters

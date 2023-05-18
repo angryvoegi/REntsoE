@@ -9,10 +9,10 @@ get_Locations(rawdat, eicLoc = eicLoc)
 \arguments{
 \item{rawdat}{Converted XML response to list}
 
-\item{eicLoc}{}
+\item{eicLoc}{Dataframe that comes with the package (see eicLoc)}
 }
 \value{
-returns a vector with the locations
+Returns a vector with the locations
 }
 \description{
 Function takes the mRID from the pulled data and matches

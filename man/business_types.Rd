@@ -7,10 +7,10 @@
 business_types(ts_dat)
 }
 \arguments{
-\item{ts_dat}{Only_ts data}
+\item{ts_dat}{Response converted to onlyTS}
 }
 \value{
-vector of business types
+Cector of business types
 }
 \description{
 Function gets the businesstype from raw data

@@ -1,11 +1,10 @@
 ## For Transmission mainly
 #' Function pulls the name of the location from the eic code
 #'
-#' @param rlst rlst raw list, converted xml response to list
-#' @param eic dataframe with the area codes (areaY from the entso e website)
+#' @param rlst Rlst raw list, converted xml response to list
+#' @param eic Dataframe with the area codes (areaY from the entso e website)
 #'
 #' @return Short display name of the country/region/area
-#' @export
 get_displayName <- function(rlst, eic) {
   inDomain <- rlst$TimeSeries$in_Domain.mRID[[1]]
   outDomain <- rlst$TimeSeries$out_Domain.mRID[[1]]
@@ -26,11 +25,10 @@ get_displayName <- function(rlst, eic) {
 #' colnames. The function checks if the input is in the correct
 #' format (dataframe).
 #'
-#' @param df dataframe with date, value and possible more information
+#' @param df Dataframe with date, value and possible more information
 #' @param rawdat Converted XML response to list
 #'
-#' @return returns dataframe with set colnames
-#' @export
+#' @return Returns dataframe with set colnames
 set_colnames <- function(df, rawdat) {
   params <- get_params(rawdat)
   if ("data.frame" %in% class(df)) {
@@ -102,13 +100,12 @@ set_colnames <- function(df, rawdat) {
 #' Append the processtype (e.g. intraday total) to the colnames. This
 #' is done with the `get_params` function.
 #'
-#' @param df final dataframe (without proper colnames)
+#' @param df Final dataframe (without proper colnames)
 #' @param rawdat Converted XML response to list
-#' @param codeList codeList (excel data)
-#' @param onlyTS_dat list of data containing only the timeseries data
+#' @param codeList CodeList (dataframe that comes with this package)
+#' @param onlyTS_dat List of data containing only the timeseries data
 #'
-#' @return vector with correct colnames
-#' @export
+#' @return Vector with correct colnames
 dynamic_colnames <- function(df, rawdat, onlyTS_dat, codeList, PSR = FALSE) {
   params <- get_params(rawdat)[c("BusinessType", "ProcessType")]
   process_index <- which(codeList$ProcessTypeList$CODE %in% params[[2]])
@@ -145,10 +142,9 @@ dynamic_colnames <- function(df, rawdat, onlyTS_dat, codeList, PSR = FALSE) {
 #' @details
 #' Function is subject to change.
 #'
-#' @param ts_dat Only_ts data
+#' @param ts_dat Response converted to onlyTS
 #'
-#' @return vector of business types
-#' @export
+#' @return Cector of business types
 business_types <- function(ts_dat) {
   all_bsn_types <- lapply(ts_dat, function(x) {
     x$businessType
@@ -173,10 +169,9 @@ business_types <- function(ts_dat) {
 #' data is for generation or consumption. The function also checks if the last
 #' word of the colnames already is generation or consumption
 #'
-#' @param ts_dat Only_ts data
+#' @param ts_dat Response converted to onlyTS
 #'
-#' @return vector with unique values
-#' @export
+#' @return Vector with unique values
 generation_consumption <- function(ts_dat) {
   vec <- lapply(ts_dat, function(x) {
     tmp <- grep("BiddingZone_Domain.mRID", names(x))

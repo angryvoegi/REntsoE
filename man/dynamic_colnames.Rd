@@ -7,16 +7,16 @@
 dynamic_colnames(df, rawdat, onlyTS_dat, codeList, PSR = FALSE)
 }
 \arguments{
-\item{df}{final dataframe (without proper colnames)}
+\item{df}{Final dataframe (without proper colnames)}
 
 \item{rawdat}{Converted XML response to list}
 
-\item{onlyTS_dat}{list of data containing only the timeseries data}
+\item{onlyTS_dat}{List of data containing only the timeseries data}
 
-\item{codeList}{codeList (excel data)}
+\item{codeList}{CodeList (dataframe that comes with this package)}
 }
 \value{
-vector with correct colnames
+Vector with correct colnames
 }
 \description{
 Function dynamically craetes colnames

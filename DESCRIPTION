@@ -1,7 +1,7 @@
 Package: REntsoE
 Type: Package
 Title: REntsoE - Entso-E data to R
-Version: 0.0.4
+Version: 0.0.5
 Author: Nicco Vögeli
 Maintainer: Nicco Vögeli <nicco.voegeli@gmail.com>
 Description: This package provides an API wrapper to the
@@ -14,7 +14,7 @@ LazyData: true
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10)
 Imports:

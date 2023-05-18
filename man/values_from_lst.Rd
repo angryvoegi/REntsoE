@@ -10,7 +10,7 @@ values_from_lst(lst_ts)
 \item{lst_ts}{TimeSeries object from the function only_ts}
 }
 \value{
-list with only values
+List with only values
 }
 \description{
 Using the `only_ts` function, this function returns only the values

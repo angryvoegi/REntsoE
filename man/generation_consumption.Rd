@@ -7,10 +7,10 @@
 generation_consumption(ts_dat)
 }
 \arguments{
-\item{ts_dat}{Only_ts data}
+\item{ts_dat}{Response converted to onlyTS}
 }
 \value{
-vector with unique values
+Vector with unique values
 }
 \description{
 Function searches for the name "BiddingZone_Domain.mRID" and returns

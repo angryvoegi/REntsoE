@@ -7,7 +7,7 @@
 set_apikey(key)
 }
 \arguments{
-\item{key}{This is the ENSTO-E API Key}
+\item{key}{The ENSTO-E API Key}
 }
 \description{
 `set_apikey` sets your API key to the environment variable

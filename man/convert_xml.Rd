@@ -10,7 +10,7 @@ convert_xml(xml)
 \item{xml}{Response object from the api call}
 }
 \value{
-list of response
+List of response
 }
 \description{
 `convert_xml` returns a list from a xml response

@@ -9,12 +9,11 @@
 #' Is used to append to data and know what type it is (e.g. [14.1.D])
 #'
 #'
-#' @param rlst rlst raw list, converted xml response to list
+#' @param rlst Rlst raw list, converted xml response to list
 #' @param psrtype PSR Type from codeList$AssetTypeList (excel data)
 #'
 #' @return Returns named vector with the PSR types in order of them being
 #' in the data
-#' @export
 type_from_list <- function(rlst, psrtype) {
   tmp <- rlst[names(rlst) == "TimeSeries"]
   vals_lst <- lapply(tmp, function(x) {

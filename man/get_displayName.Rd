@@ -7,9 +7,9 @@
 get_displayName(rlst, eic)
 }
 \arguments{
-\item{rlst}{rlst raw list, converted xml response to list}
+\item{rlst}{Rlst raw list, converted xml response to list}
 
-\item{eic}{dataframe with the area codes (areaY from the entso e website)}
+\item{eic}{Dataframe with the area codes (areaY from the entso e website)}
 }
 \value{
 Short display name of the country/region/area
