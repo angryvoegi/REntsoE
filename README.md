@@ -1,7 +1,7 @@
 # REntsoE
 
 <!-- badges: start -->
-
+[![R-CMD-check](https://github.com/r-lib/rcmdcheck/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/rcmdcheck/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 R Package for the [Entso-E Transparency Platform](https://transparency.entsoe.eu/). 
