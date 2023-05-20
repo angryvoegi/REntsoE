@@ -1,7 +1,6 @@
 # REntsoE
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/r-lib/rcmdcheck/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/rcmdcheck/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/angryvoegi/REntsoE/branch/master/graph/badge.svg)](https://app.codecov.io/gh/angryvoegi/REntsoE?branch=master)
 [![R-CMD-check](https://github.com/angryvoegi/REntsoE/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/angryvoegi/REntsoE/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
