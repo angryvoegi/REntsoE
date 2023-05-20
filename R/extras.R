@@ -135,7 +135,7 @@ to_weekly <- function(df, type = c("mean", "median", "sum")){
 #'  documentType = "A65", processType = "A16",
 #'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
 #'  periodStart = "201912312300", periodEnd = "202012312300"), "median")
-to_daily <- function(df, type = c("mean", ",median", "sum")){
+to_daily <- function(df, type = c("mean", "median", "sum")){
   type <- match.arg(type)
   cls_names <- colnames(df)[-1]
   df <- df %>%

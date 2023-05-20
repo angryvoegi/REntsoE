@@ -35,13 +35,8 @@
 build_url <- function(documentType, processType, contract_MarketAgreement.Type,
                       outBiddingZone_Domain, auction.Type, psrType, Area_Domain,
                       in_Domain, out_Domain, registeredResource, businessType,
-                      periodStart, periodEnd) {
+                      periodStart, periodEnd, key = TRUE) {
   base_url <- "https://web-api.tp.entsoe.eu/api?"
-  token <- Sys.getenv("ENTSOE_KEY")
-  if(is.na(token) || token == ""){
-    message("No API token found. Set your token with the function `set_apikey`.")
-    stop()
-  }
   base_df <- data.frame(matrix(nrow = 13, ncol = 1))
   rownames(base_df) <- c(
     "documentType", "processType", "contract_MarketAgreement.Type",
@@ -49,12 +44,19 @@ build_url <- function(documentType, processType, contract_MarketAgreement.Type,
     "in_Domain", "out_Domain", "registeredResource", "businessType",
     "periodStart", "periodEnd"
   )
-  fArgs <- within(as.list(environment()), rm(base_df, base_url, token))
+  fArgs <- within(as.list(environment()), rm(base_df, base_url))
   boolRem <- lapply(fArgs, function(x) class(x) == "name")
   fArgsClean <- data.frame(fArgs[!unname(unlist(boolRem))])
   fin <- merge(base_df, t(fArgsClean), by = "row.names", all.x = TRUE)[, -2] %>%
     na.omit()
   fin <- paste(apply(fin, 1, paste, collapse = "="), collapse = "&")
-  fin <- paste(base_url, fin, "&securityToken=", token, sep = "")
+  if(key) {
+    token <- Sys.getenv("ENTSOE_KEY")
+    fin <- paste(base_url, fin, "&securityToken=", token, sep = "")
+    if(is.na(token) || token == ""){
+      message("No API token found. Set your token with the function `set_apikey`.")
+      stop()
+    }
+  }
   return(fin)
 }

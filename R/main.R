@@ -156,9 +156,6 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
   url <- do.call(build_url, fArgs)
   message("Built URL, sendig request...")
   resp <- httr::GET(url)
-  if(is.na(api_error(resp))){
-    stop()
-  }
   message("Got data, converting it...")
   convResp <- convert_xml(resp)
   onlyTS <- only_ts(convResp)
