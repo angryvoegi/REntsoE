@@ -7,8 +7,8 @@ test_that("Check if data frame is pivoted correctly", {
       outBiddingZone_Domain = "10YCZ-CEPS-----N",
       periodStart = "201912312300", periodEnd = "202012312300")
     resp <- httr::GET(url)
-    rlst <- convert_xml(resp)
   })
+  rlst <- convert_xml(resp)
   datas <- rlst
   onlyTS <- only_ts(datas)
   dates <- date_from_lst(onlyTS)

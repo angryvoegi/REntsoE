@@ -7,8 +7,8 @@ test_that("Response is only ts", {
       outBiddingZone_Domain = "10YCZ-CEPS-----N",
       periodStart = "201912312300", periodEnd = "202012312300")
     resp <- httr::GET(url)
-    rlst <- convert_xml(resp)
   })
+  rlst <- convert_xml(resp)
   datas <- rlst
   test <- only_ts(datas)
   expect_true(names(test) == "TimeSeries")

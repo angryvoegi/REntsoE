@@ -16,6 +16,7 @@ test_that("URL is built correctly", {
 })
 
 test_that("URL security token missing", {
+  Sys.setenv("ENTSOE_KEY" = "")
   documentType = "A65"
   processType = "A16"
   outBiddingZone_Domain = "10YCZ-CEPS-----N"

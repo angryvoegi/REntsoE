@@ -7,8 +7,8 @@ test_that("PSR type is correctly mapped", {
       in_Domain = "10YFI-1--------U",
       periodStart = "201912312300", periodEnd = "202012312300")
     resp <- httr::GET(url)
-    rlst <- convert_xml(resp)
   })
+  rlst <- convert_xml(resp)
   datas <- rlst
   psrType <- type_from_list(
     rlst = datas,

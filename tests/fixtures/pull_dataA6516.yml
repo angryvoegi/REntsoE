@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://web-api.tp.entsoe.eu/api?documentType=A65&outBiddingZone_Domain=10YCZ-CEPS-----N&periodEnd=202012312300&periodStart=201912312300&processType=A16&securityToken=
+    uri: https://web-api.tp.entsoe.eu/api?documentType=A65&outBiddingZone_Domain=10YCZ-CEPS-----N&periodEnd=202012312300&periodStart=201912312300&processType=A16&securityToken=0b6f37a7-d11b-420a-8d44-bcb1136dd5e0
     body:
       encoding: ''
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sat, 20 May 2023 12:40:04 GMT
+      date: Sat, 20 May 2023 13:07:14 GMT
       server: Apache
       strict-transport-security: max-age=31536000 ; includeSubDomains
       x-powered-by: Undertow/1
@@ -26,7 +26,7 @@ http_interactions:
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
         <GL_MarketDocument xmlns="urn:iec62325.351:tc57wg16:451-6:generationloaddocument:3:0">
-            <mRID>00430bec8e0f4f6daac117df38fc3645</mRID>
+            <mRID>940c09ee12e842df8b1ad4e973d34732</mRID>
             <revisionNumber>1</revisionNumber>
             <type>A65</type>
             <process.processType>A16</process.processType>
@@ -34,7 +34,7 @@ http_interactions:
             <sender_MarketParticipant.marketRole.type>A32</sender_MarketParticipant.marketRole.type>
             <receiver_MarketParticipant.mRID codingScheme="A01">10X1001A1001A450</receiver_MarketParticipant.mRID>
             <receiver_MarketParticipant.marketRole.type>A33</receiver_MarketParticipant.marketRole.type>
-            <createdDateTime>2023-05-20T12:40:07Z</createdDateTime>
+            <createdDateTime>2023-05-20T13:07:16Z</createdDateTime>
             <time_Period.timeInterval>
                 <start>2019-12-31T23:00Z</start>
                 <end>2020-12-31T23:00Z</end>
@@ -35191,5 +35191,5 @@ http_interactions:
                 </Period>
             </TimeSeries>
         </GL_MarketDocument>
-  recorded_at: 2023-05-20 12:40:09 GMT
+  recorded_at: 2023-05-20 13:07:16 GMT
   recorded_with: vcr/1.2.0, webmockr/0.9.0

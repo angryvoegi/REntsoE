@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://web-api.tp.entsoe.eu/api?documentType=A65&processType=A16&periodStart=201512302300&periodEnd=201512312300&securityToken=0b6f37a7-d11b-420a-8d44-bcb1136dd5e0
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 400
+      category: Client error
+      reason: Bad Request
+      message: 'Client error: (400) Bad Request'
+    headers:
+      date: Sat, 20 May 2023 13:24:47 GMT
+      server: Apache
+      strict-transport-security: max-age=31536000 ; includeSubDomains
+      x-powered-by: Undertow/1
+      content-length: '885'
+      connection: close
+      content-type: application/xml
+    body:
+      encoding: ''
+      file: no
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Acknowledgement_MarketDocument\n\txmlns=\"urn:iec62325.351:tc57wg16:451-1:acknowledgementdocument:7:0\">\n\t<mRID>808992ca-86ec-4</mRID>\n\t<createdDateTime>2023-05-20T13:24:48Z</createdDateTime>\n\n\t<sender_MarketParticipant.mRID
+        codingScheme=\"A01\">10X1001A1001A450</sender_MarketParticipant.mRID>\n\t<sender_MarketParticipant.marketRole.type>A32</sender_MarketParticipant.marketRole.type>\n\n\t<receiver_MarketParticipant.mRID
+        codingScheme=\"A01\">10X1001A1001A450</receiver_MarketParticipant.mRID>\n\t<receiver_MarketParticipant.marketRole.type>A39</receiver_MarketParticipant.marketRole.type>\n\n\t\n\t<received_MarketDocument.createdDateTime>2023-05-20T13:24:48Z</received_MarketDocument.createdDateTime>\n\n\n\t<Reason>\n\t\t<code>999</code>\n\t\t<text>Mandatory
+        parameter OutBiddingZone_Domain is missing or is empty.</text>\n\t</Reason>\n\n\n</Acknowledgement_MarketDocument>\n"
+  recorded_at: 2023-05-20 13:24:48 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.9.0
