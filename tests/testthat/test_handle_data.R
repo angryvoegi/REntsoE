@@ -1,3 +1,5 @@
+library(testthat)
+library(vcr)
 test_that("Check if data frame is pivoted correctly", {
   vcr::use_cassette("pull_dataA6501", {
     url <- build_url(

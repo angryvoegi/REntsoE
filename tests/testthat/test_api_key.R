@@ -1,4 +1,5 @@
 library(testthat)
+library(vcr)
 test_that("API key must be character",{
   key <- 123
   Sys.setenv("ENTSOE_KEY" = "")

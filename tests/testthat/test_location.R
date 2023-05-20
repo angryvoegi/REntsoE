@@ -1,4 +1,5 @@
 library(testthat)
+library(vcr)
 test_that("Correct location from mRID", {
   vcr::use_cassette("pull_dataA71", {
     url <- build_url(
@@ -6,8 +7,8 @@ test_that("Correct location from mRID", {
       in_Domain = "10YCZ-CEPS-----N",
       periodStart = "201912312300", periodEnd = "202012312300")
     resp <- httr::GET(url)
-    rlst <- convert_xml(resp)
   })
+  rlst <- convert_xml(resp)
   datas <- rlst
   locs <- get_Locations(rawdat = datas, eicLoc = REntsoE::eicLoc)
   expect_equal(locs[1], "EPLE")

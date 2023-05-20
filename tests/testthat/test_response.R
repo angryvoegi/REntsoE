@@ -1,4 +1,5 @@
 library(testthat)
+library(vcr)
 test_that("Response is only ts", {
   vcr::use_cassette("pull_dataA6516", {
     url <- build_url(

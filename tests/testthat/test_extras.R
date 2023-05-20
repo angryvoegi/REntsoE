@@ -1,4 +1,5 @@
 library(testthat)
+library(vcr)
 test_that("Conversion to yearly is correct", {
   vcr::use_cassette("pull_data", {
     dat <- pull_data(

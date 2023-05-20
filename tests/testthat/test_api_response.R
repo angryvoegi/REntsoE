@@ -1,3 +1,5 @@
+library(testthat)
+library(vcr)
 test_that("API returns response",{
   url <- "https://web-api.tp.entsoe.eu/api?documentType=A65&processType=A16&outBiddingZone_Domain=10YCZ-CEPS-----N&periodStart=201512302300&periodEnd=201512312300"
   resp <- httr::GET(paste(url, "&securityToken=", Sys.getenv("ENTSOE_KEY"), sep = ""))

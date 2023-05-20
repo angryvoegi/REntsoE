@@ -1,4 +1,5 @@
 library(testthat)
+library(vcr)
 test_that("PSR type is correctly mapped", {
   vcr::use_cassette("pull_dataA69", {
     url <- build_url(

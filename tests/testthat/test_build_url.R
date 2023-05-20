@@ -1,3 +1,5 @@
+library(testthat)
+library(vcr)
 test_that("URL is built correctly", {
   documentType = "A65"
   processType = "A16"

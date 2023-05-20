@@ -1,3 +1,5 @@
+library(testthat)
+library(vcr)
 test_that("Display name is converted correctly", {
   vcr::use_cassette("pull_dataA61", {
     url <- build_url(

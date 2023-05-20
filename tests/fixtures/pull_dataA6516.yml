@@ -14,7 +14,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 19 May 2023 18:05:47 GMT
+      date: Sat, 20 May 2023 12:40:04 GMT
       server: Apache
       strict-transport-security: max-age=31536000 ; includeSubDomains
       x-powered-by: Undertow/1
@@ -26,7 +26,7 @@ http_interactions:
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
         <GL_MarketDocument xmlns="urn:iec62325.351:tc57wg16:451-6:generationloaddocument:3:0">
-            <mRID>c1945d1d32054eada7cd018cf6d55a68</mRID>
+            <mRID>00430bec8e0f4f6daac117df38fc3645</mRID>
             <revisionNumber>1</revisionNumber>
             <type>A65</type>
             <process.processType>A16</process.processType>
@@ -34,7 +34,7 @@ http_interactions:
             <sender_MarketParticipant.marketRole.type>A32</sender_MarketParticipant.marketRole.type>
             <receiver_MarketParticipant.mRID codingScheme="A01">10X1001A1001A450</receiver_MarketParticipant.mRID>
             <receiver_MarketParticipant.marketRole.type>A33</receiver_MarketParticipant.marketRole.type>
-            <createdDateTime>2023-05-19T18:05:50Z</createdDateTime>
+            <createdDateTime>2023-05-20T12:40:07Z</createdDateTime>
             <time_Period.timeInterval>
                 <start>2019-12-31T23:00Z</start>
                 <end>2020-12-31T23:00Z</end>
@@ -35191,5 +35191,5 @@ http_interactions:
                 </Period>
             </TimeSeries>
         </GL_MarketDocument>
-  recorded_at: 2023-05-19 18:05:53 GMT
+  recorded_at: 2023-05-20 12:40:09 GMT
   recorded_with: vcr/1.2.0, webmockr/0.9.0
