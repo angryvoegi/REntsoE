@@ -1,4 +1,4 @@
-# REntsoE  <img src="man/figures/logo.png" align="right" height="138">
+# REntsoE  <img src="man/figures/Logo.png" align="right" height="138">
 
 <!-- badges: start -->
 [![Codecov test coverage](https://codecov.io/gh/angryvoegi/REntsoE/branch/master/graph/badge.svg)](https://app.codecov.io/gh/angryvoegi/REntsoE?branch=master)
