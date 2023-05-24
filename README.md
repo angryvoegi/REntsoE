@@ -31,3 +31,9 @@ First, write your security token to the .Renviron of your R with
 REntsoE::set_apikey("<YOUR_KEY>")
 ```
 
+
+
+
+# Acknowledgement
+
+I am incredibly thankful to my girlfriend Bianca Siegrist for her talent and creativity in crafting a beautiful logo for my project. 
