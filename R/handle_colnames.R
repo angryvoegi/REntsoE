@@ -29,6 +29,7 @@ get_displayName <- function(rlst, eic) {
 #' @param rawdat Converted XML response to list
 #'
 #' @return Returns dataframe with set colnames
+#' @importFrom dplyr case_when
 set_colnames <- function(df, rawdat) {
   params <- get_params(rawdat)
   if ("data.frame" %in% class(df)) {
@@ -104,6 +105,8 @@ set_colnames <- function(df, rawdat) {
 #' @param rawdat Converted XML response to list
 #' @param codeList CodeList (dataframe that comes with this package)
 #' @param onlyTS_dat List of data containing only the timeseries data
+#' @param PSR If PSR is true, old colnames and process names are pasted together to
+#' form the new colnames
 #'
 #' @return Vector with correct colnames
 dynamic_colnames <- function(df, rawdat, onlyTS_dat, codeList, PSR = FALSE) {

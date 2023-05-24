@@ -4,7 +4,7 @@
 \alias{get_Locations}
 \title{Get location from mRID}
 \usage{
-get_Locations(rawdat, eicLoc = eicLoc)
+get_Locations(rawdat, eicLoc)
 }
 \arguments{
 \item{rawdat}{Converted XML response to list}

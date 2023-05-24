@@ -9,119 +9,6 @@
 #' converts it in the appropriate manner. The funciton is complex because different
 #' types of datapoints need different treatment.
 #'
-#' @usage
-#' Actual Total Load [6.1.A]:
-#' pull_data(
-#'  documentType = "A65", processType = "A16",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Day-Ahead Total Load Forecast [6.1.B]:
-#' pull_data(
-#'  documentType = "A65", processType = "A01",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Week-Ahead Total Load Forecast [6.1.C]:
-#' pull_data(
-#'  documentType = "A65", processType = "A31",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Month-Ahead Total Load Forecast [6.1.D]:
-#' pull_data(
-#'  documentType = "A65", processType = "A32",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Year-Ahead Total Load Forecast [6.1.E]:
-#' pull_data(
-#'  documentType = "A65", processType = "A33",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Year-Ahead Forecast Margin [8.1]:
-#' pull_data(
-#'  documentType = "A70", processType = "A33",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Forecasted Capacity [11.1.A]:
-#' pull_data(
-#'  documentType = "A61", contract_MarketAgreement.Type = "A01",
-#'  in_Domain = "10YCZ-CEPS-----N", out_Domain = "10YSK-SEPS-----K",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Installed Generation Capacity Aggregated [14.1.A]:
-#' pull_data(
-#'  documentType = "A68", processType = "A01",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Installed Generation Capacity per Unit [14.1.B]:
-#' pull_data(
-#'  documentType = "A71", processType = "A33",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Day-ahead Aggregated Generation [14.1.C]:
-#' pull_data(
-#'  documentType = "A71", processType = "A01",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Day-ahead Generation Forecasts for Wind and Solar [14.1.D]:
-#' pull_data(
-#'  documentType = "A68", processType = "A33",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Current Generation Forecasts for Wind and Solar [14.1.D]:
-#' pull_data(
-#'  documentType = "A69", processType = "A18",
-#'  in_Domain = "10YFI-1--------U",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Intraday Generation Forecasts for Wind and Solar [14.1.D]:
-#' pull_data(
-#'  documentType = "A69", processType = "A40",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Actual Generation Output per Generation Unit [16.1.A]:
-#' pull_data(
-#'  documentType = "A73", processType = "A16",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300",
-#'  registered_resource = "27W-GU-EDETG2--X" (optional!)
-#' )
-#'
-#' Aggregated Filling Rate of Water Reservoirs and Hydro Storage Plants [16.1.D]:
-#' pull_data(
-#'  documentType = "A72", processType = "A16",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
-#'
-#' Aggregated Generation per Type [16.1.B&C]:
-#' pull_data(
-#'  documentType = "A75", processType = "A16",
-#'  in_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"
-#' )
 #'
 #'
 #' @import dplyr httr tidyr xml2
@@ -143,6 +30,7 @@
 #' @return Dataframe
 #'
 #' @export
+#' @importFrom stats reshape
 pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
                       outBiddingZone_Domain, auction.Type, psrType, Area_Domain,
                       in_Domain, out_Domain, registeredResource, businessType,

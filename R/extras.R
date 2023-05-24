@@ -17,13 +17,8 @@
 #' Converted dataframe
 #' @export
 #'
-#' @import lubridate
-#'
-#' @usage
-#' to_yearly(pull_data(
-#'  documentType = "A65", processType = "A16",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"), "median")
+#' @importFrom stats median
+#' @importFrom lubridate year
 to_yearly <- function(df, type = c("mean", "median", "sum")){
   type <- match.arg(type)
   cls_names <- colnames(df)[-1]
@@ -52,14 +47,8 @@ to_yearly <- function(df, type = c("mean", "median", "sum")){
 #' `sum`
 #'
 #' @export
-#'
-#' @import lubridate
-#'
-#' @usage
-#' to_monthly(pull_data(
-#'  documentType = "A65", processType = "A16",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"), "median")
+#' @importFrom stats median
+#' @importFrom lubridate year month
 to_monthly <- function(df, type = c("mean", "median", "sum")){
   type <- match.arg(type)
   cls_names <- colnames(df)[-1]
@@ -94,14 +83,7 @@ to_monthly <- function(df, type = c("mean", "median", "sum")){
 #' `sum`
 #'
 #' @export
-#'
-#' @import lubridate
-#'
-#' @usage
-#' to_weekly(pull_data(
-#'  documentType = "A65", processType = "A16",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"), "median")
+#' @importFrom stats median
 to_weekly <- function(df, type = c("mean", "median", "sum")){
   type <- match.arg(type)
   cls_names <- colnames(df)[-1]
@@ -129,12 +111,7 @@ to_weekly <- function(df, type = c("mean", "median", "sum")){
 #' `sum`
 #'
 #' @export
-#'
-#' @usage
-#' to_daily(pull_data(
-#'  documentType = "A65", processType = "A16",
-#'  outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'  periodStart = "201912312300", periodEnd = "202012312300"), "median")
+#' @importFrom stats median
 to_daily <- function(df, type = c("mean", "median", "sum")){
   type <- match.arg(type)
   cls_names <- colnames(df)[-1]

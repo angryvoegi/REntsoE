@@ -44,10 +44,12 @@ set_apikey <- function(key) {
 #' @param xml Response object from the api call
 #'
 #' @return List of response
+#' @importFrom httr content
+#' @importFrom xml2 as_list
 convert_xml <- function(xml) {
   # convert xml to list
   tmp <- httr::content(xml, encoding = "UTF-8") %>%
-    xml2::as_list(.)
+    xml2::as_list()
   temp <- tmp$GL_MarketDocument
   if (is.null(temp)) {
     temp <- tmp$Publication_MarketDocument

@@ -4,7 +4,7 @@
 \alias{append_location}
 \title{Add location to dataframe}
 \usage{
-append_location(finishedDF, rawdat = rawdat)
+append_location(df, rawdat)
 }
 \arguments{
 \item{df}{Final dataframe with the aggregated data}

@@ -14,6 +14,9 @@ dynamic_colnames(df, rawdat, onlyTS_dat, codeList, PSR = FALSE)
 \item{onlyTS_dat}{List of data containing only the timeseries data}
 
 \item{codeList}{CodeList (dataframe that comes with this package)}
+
+\item{PSR}{If PSR is true, old colnames and process names are pasted together to
+form the new colnames}
 }
 \value{
 Vector with correct colnames

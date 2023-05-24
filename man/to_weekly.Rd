@@ -4,10 +4,7 @@
 \alias{to_weekly}
 \title{Convert to Weekly}
 \usage{
-to_weekly(pull_data(
- documentType = "A65", processType = "A16",
- outBiddingZone_Domain = "10YCZ-CEPS-----N",
- periodStart = "201912312300", periodEnd = "202012312300"), "median")
+to_weekly(df, type = c("mean", "median", "sum"))
 }
 \arguments{
 \item{df}{Dataframe pulled from the API}

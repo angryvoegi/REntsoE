@@ -23,15 +23,11 @@
 #' @param businessType Identification of the nature of timeseries
 #' @param periodStart Starting point
 #' @param periodEnd End point
+#' @param key Should the API-Key be included (mainly for testing purpose)?
 #'
 #' @return
 #' String of url to make request
-#'
-#' @usage
-#' build_url(documentType = "A65", processType = "A16",
-#'      outBiddingZone_Domain = "10YCZ-CEPS-----N",
-#'      periodStart = "201512312300", periodEnd = "201612312300")
-#'
+#' @importFrom stats na.omit
 build_url <- function(documentType, processType, contract_MarketAgreement.Type,
                       outBiddingZone_Domain, auction.Type, psrType, Area_Domain,
                       in_Domain, out_Domain, registeredResource, businessType,

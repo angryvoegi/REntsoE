@@ -40,7 +40,7 @@ only_ts <- function(rlst) {
 #' and period = periodicity
 points_to_time <- function(start, n_points, period) {
   ts_start <- start %>%
-    as.POSIXct(., tryFormats = c(
+    as.POSIXct(tryFormats = c(
       "%Y-%m-%dT%H:%MZ",
       "%Y-%m-%dT%H:%M:%SZ",
       "%Y-%m-%d %H:%M",

@@ -12,17 +12,17 @@ A data frame with 1213 rows and 11 columns:
   * One Character identifying the object type that the code represents.
   * 12 digits, uppercase characters or minus signs allocated by the issuing office
   * 1 check character to ensure the code validity.}
-  \item{EicDisplayName}{Machine friendly name for Country/Region/Participant}
-  \item{EicLongName}{Name of participant}
+  \item{EicDisplayName}{Machine friendly name for Country/Region/Participant.}
+  \item{EicLongName}{Name of participant.}
   \item{EicParent}{If two different EIC Participants have the same VAT
   identification number or identification code and this is permitted by the
   local tax regulations, one of the two EIC codes should be designated as
   EIC Parent, otherwise one of the two EIC codes will not be accepted.}
-  \item{EicResponsibleParty}{Responsible party for the publication}
-  \item{EicStatus}{Status of the EIC code (active/inactive)}
-  \item{MarketParticipantPostalCode}{Postal code of the participating Entity}
-  \item{MarketParticipantIsoCountryCode}{Country code of the participating Entity}
-  \item{MarketParticipantVatCode}{VAT code of the participating Entity}
+  \item{EicResponsibleParty}{Responsible party for the publication.}
+  \item{EicStatus}{Status of the EIC code (active/inactive).}
+  \item{MarketParticipantPostalCode}{Postal code of the participating Entity.}
+  \item{MarketParticipantIsoCountryCode}{Country code of the participating Entity.}
+  \item{MarketParticipantVatCode}{VAT code of the participating Entity.}
   \item{EicTypeFunctionList}{}
   \item{type}{}
 }

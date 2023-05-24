@@ -10,9 +10,6 @@
 #' and matches them to the eicLoc table, extracting the name
 #' of the power plan
 #'
-#' @usage
-#' get_Locations(rawdat, eicLoc = eicLoc)
-#'
 #' @param rawdat Converted XML response to list
 #' @param eicLoc Dataframe that comes with the package (see eicLoc)
 #'
@@ -34,9 +31,6 @@ get_Locations <- function(rawdat, eicLoc) {
 #'
 #' @details
 #' Adds a column to the finished dataframe, appending the corresponding locations
-#'
-#' @usage
-#' append_location(finishedDF, rawdat = rawdat)
 #'
 #' @param df Final dataframe with the aggregated data
 #' @param rawdat Locations as text not EIC

@@ -4,9 +4,22 @@
 \alias{build_url}
 \title{Build URL}
 \usage{
-build_url(documentType = "A65", processType = "A16",
-     outBiddingZone_Domain = "10YCZ-CEPS-----N",
-     periodStart = "201512312300", periodEnd = "201612312300")
+build_url(
+  documentType,
+  processType,
+  contract_MarketAgreement.Type,
+  outBiddingZone_Domain,
+  auction.Type,
+  psrType,
+  Area_Domain,
+  in_Domain,
+  out_Domain,
+  registeredResource,
+  businessType,
+  periodStart,
+  periodEnd,
+  key = TRUE
+)
 }
 \arguments{
 \item{documentType}{Corresponding to the data point}
@@ -34,6 +47,8 @@ build_url(documentType = "A65", processType = "A16",
 \item{periodStart}{Starting point}
 
 \item{periodEnd}{End point}
+
+\item{key}{Should the API-Key be included (mainly for testing purpose)?}
 }
 \value{
 String of url to make request

@@ -7,34 +7,34 @@
 \format{
 A list containing 27 different dataframes
 \describe{
- \item{UnitOfMeasureTypeList}{Unit of supplied data}
- \item{TarifTypeTypeList}{Tarif type}
- \item{StatusTypeList}{Status of the document}
- \item{RoleTypeList}{Role of the party}
- \item{RightsTypeList}{Type of right of the data point}
- \item{ReasonCodeTypeList}{Indicating the reason for acceptance or rejection}
- \item{QualityTypeList}{Quality of the data}
+ \item{UnitOfMeasureTypeList}{Unit of supplied data.}
+ \item{TarifTypeTypeList}{Tarif type.}
+ \item{StatusTypeList}{Status of the document.}
+ \item{RoleTypeList}{Role of the party.}
+ \item{RightsTypeList}{Type of right of the data point.}
+ \item{ReasonCodeTypeList}{Indicating the reason for acceptance or rejection.}
+ \item{QualityTypeList}{Quality of the data.}
  \item{ProcessTypeList}{Process type, information provided and on which
- schedule}
- \item{PriceDirectionTypeList}{Income or expediture (sell or buy)}
- \item{PriceCategoryTypeList}{Price categorie}
- \item{PaymentTermsTypeList}{Type of payment}
+ schedule.}
+ \item{PriceDirectionTypeList}{Income or expediture (sell or buy).}
+ \item{PriceCategoryTypeList}{Price categorie.}
+ \item{PaymentTermsTypeList}{Type of payment.}
  \item{ObjectAggregationTypeList}{Type of object, area, party etc.}
- \item{IndicatorTypeList}{Indicator}
- \item{EicTypeList}{Type of EIC identifier}
- \item{EnergyProductTypeList}{Active or reactive power/energy}
- \item{DocumentTypeList}{Requested document type}
- \item{DirectionTypeList}{Increase or decrease energy}
- \item{CurveTypeList}{Curve type}
- \item{CurrencyTypeList}{Currency}
- \item{ContractTypeList}{Allocation of capacity}
- \item{CodingSchemeTypeList}{Type of coding}
- \item{ClassificationTypeList}{Classification}
- \item{CategoryTypeList}{Category type}
- \item{BusinessTypeList}{Type of business of the supplier}
- \item{AuctionTypeList}{Auction type}
- \item{AssetTypeList}{Type of generation/load}
- \item{AllocationModeTypeList}{Type of allocation to buy power}
+ \item{IndicatorTypeList}{Indicator.}
+ \item{EicTypeList}{Type of EIC identifier.}
+ \item{EnergyProductTypeList}{Active or reactive power/energy.}
+ \item{DocumentTypeList}{Requested document type.}
+ \item{DirectionTypeList}{Increase or decrease energy.}
+ \item{CurveTypeList}{Curve type.}
+ \item{CurrencyTypeList}{Currency.}
+ \item{ContractTypeList}{Allocation of capacity.}
+ \item{CodingSchemeTypeList}{Type of coding.}
+ \item{ClassificationTypeList}{Classification.}
+ \item{CategoryTypeList}{Category type.}
+ \item{BusinessTypeList}{Type of business of the supplier.}
+ \item{AuctionTypeList}{Auction type.}
+ \item{AssetTypeList}{Type of generation/load.}
+ \item{AllocationModeTypeList}{Type of allocation to buy power.}
 }
 }
 \source{

@@ -4,10 +4,7 @@
 \alias{to_monthly}
 \title{Convert to Monthly}
 \usage{
-to_monthly(pull_data(
- documentType = "A65", processType = "A16",
- outBiddingZone_Domain = "10YCZ-CEPS-----N",
- periodStart = "201912312300", periodEnd = "202012312300"), "median")
+to_monthly(df, type = c("mean", "median", "sum"))
 }
 \arguments{
 \item{df}{Dataframe pulled from the API}

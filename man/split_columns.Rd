@@ -4,7 +4,7 @@
 \alias{split_columns}
 \title{Split columns based on parameters}
 \usage{
-split_columns(df = temp_df, rawdat = converted_response)
+split_columns(df, rawdat)
 }
 \arguments{
 \item{df}{Half-finished dataframe}
