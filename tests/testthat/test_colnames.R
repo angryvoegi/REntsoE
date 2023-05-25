@@ -1,14 +1,9 @@
 library(testthat)
-library(vcr)
+library(httptest)
 test_that("Display name is converted correctly", {
-  vcr::use_cassette("pull_dataA61", {
-    url <- build_url(
-      documentType = "A61", contract_MarketAgreement.Type = "A01",
-      in_Domain = "10YCZ-CEPS-----N", out_Domain = "10YSK-SEPS-----K",
-      periodStart = "201912312300", periodEnd = "202012312300")
-    resp <- httr::GET(url)
-  })
-  rlst <- convert_xml(resp)
+  mockFile <- "web-api.tp.entsoe.eu/A61A01.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
   datas <- rlst
   test <- get_displayName(rlst = datas, eic = REntsoE::areaY)
   expect_equal(test[[1]], "CZ")
@@ -18,14 +13,9 @@ test_that("Display name is converted correctly", {
 
 
 test_that("Colnames are set correctly", {
-  vcr::use_cassette("pull_dataA611", {
-    url <- build_url(
-      documentType = "A61", contract_MarketAgreement.Type = "A01",
-      in_Domain = "10YCZ-CEPS-----N", out_Domain = "10YSK-SEPS-----K",
-      periodStart = "201912312300", periodEnd = "202012312300")
-    resp <- httr::GET(url)
-  })
-  rlst <- convert_xml(resp)
+  mockFile <- "web-api.tp.entsoe.eu/A61A01.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
   datas <- rlst
   onlyTS <- only_ts(datas)
   dates <- date_from_lst(onlyTS)
@@ -37,14 +27,9 @@ test_that("Colnames are set correctly", {
 
 
 test_that("Dynamic colnames are set correctly", {
-  vcr::use_cassette("pull_dataA65", {
-    url <- build_url(
-      documentType = "A65", processType = "A16",
-      outBiddingZone_Domain = "10YCZ-CEPS-----N",
-      periodStart = "201912312300", periodEnd = "202012312300")
-    resp <- httr::GET(url)
-  })
-  rlst <- convert_xml(resp)
+  mockFile <- "web-api.tp.entsoe.eu/A65A16.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
   datas <- rlst
   onlyTS <- only_ts(datas)
   dates <- date_from_lst(onlyTS)
@@ -62,14 +47,9 @@ test_that("Dynamic colnames are set correctly", {
 
 
 test_that("Business Type is correct", {
-  vcr::use_cassette("pull_dataA651", {
-    url <- build_url(
-      documentType = "A65", processType = "A16",
-      outBiddingZone_Domain = "10YCZ-CEPS-----N",
-      periodStart = "201912312300", periodEnd = "202012312300")
-    resp <- httr::GET(url)
-  })
-  rlst <- convert_xml(resp)
+  mockFile <- "web-api.tp.entsoe.eu/A65A16.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
   datas <- rlst
   onlyTS <- only_ts(datas)
   bT <- business_types(onlyTS)
@@ -78,14 +58,9 @@ test_that("Business Type is correct", {
 
 
 test_that("Detect generation and consumption correctly", {
-  vcr::use_cassette("pull_dataA652", {
-    url <- build_url(
-      documentType = "A65", processType = "A16",
-      outBiddingZone_Domain = "10YCZ-CEPS-----N",
-      periodStart = "201912312300", periodEnd = "202012312300")
-    resp <- httr::GET(url)
-  })
-  rlst <- convert_xml(resp)
+  mockFile <- "web-api.tp.entsoe.eu/A65A16.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
   datas <- rlst
   onlyTS <- only_ts(datas)
   gC <- generation_consumption(onlyTS)
