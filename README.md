@@ -31,26 +31,34 @@ First, write your security token to the .Renviron of your R with
 REntsoE::set_apikey("<YOUR_KEY>")
 ```
 
-In a next step, in case you are not to familiar with the EIC codes and different available data points, take a look at the following included datasets.
+In a next step, in case you are not to familiar with the EIC codes, take a look at the following included datasets:
 
 ```r
 head(REntsoE::areaY)
-           EicCode   EicDisplayName                                   EicLongName EicParent EicResponsibleParty EicStatus MarketParticipantPostalCode MarketParticipantIsoCountryCode
-1 14YCCPADATENMLDW         CCPACCP1                              CCP Austria GmbH                                  Active                                                            
-2 14YEXAADATENML2F         EXAACCP2 EXAA Abwicklungsstelle für Energieprodukte AG                                  Active                                                            
-3 14YEXAADATENMLDU          EXAACCP EXAA Abwicklungsstelle für Energieprodukte AG                                  Active                                                            
-4 10Y1001A1001A81J      IT-NORTH_FR                            Italy North_France                                  Active                                                            
-5 10Y1001A1001A85B IT-MACRZONESOUTH           Market Balance Area MACROZONE SOUTH                                  Active                                                            
-6 10Y1001A1001A91G      NORDIC_AREA                            Nordic Market Area                                  Active                                                            
-  MarketParticipantVatCode                                                             EicTypeFunctionList type
-1                       NA                                        Bidding Zone, Balance Group, Market Area    Y
-2                       NA                                                      Market Area, Balance Group    Y
-3                       NA                                        Balance Group, Bidding Zone, Market Area    Y
-4                       NA                                                                    Bidding Zone    Y
-5                       NA                                                                 Scheduling Area    Y
-6                       NA Outage Coordination Region, LFC Block, Capacity Calculation Region, Market Area    Y
+           EicCode   EicDisplayName                                   EicLongName EicParent EicResponsibleParty EicStatus MarketParticipantPostalCode MarketParticipantIsoCountryCode MarketParticipantVatCode                                                             EicTypeFunctionList type
+1 14YCCPADATENMLDW         CCPACCP1                              CCP Austria GmbH                                  Active                                                                                   NA                                        Bidding Zone, Balance Group, Market Area    Y
+2 14YEXAADATENML2F         EXAACCP2 EXAA Abwicklungsstelle für Energieprodukte AG                                  Active                                                                                   NA                                                      Market Area, Balance Group    Y
+3 14YEXAADATENMLDU          EXAACCP EXAA Abwicklungsstelle für Energieprodukte AG                                  Active                                                                                   NA                                        Balance Group, Bidding Zone, Market Area    Y
+4 10Y1001A1001A81J      IT-NORTH_FR                            Italy North_France                                  Active                                                                                   NA                                                                    Bidding Zone    Y
+5 10Y1001A1001A85B IT-MACRZONESOUTH           Market Balance Area MACROZONE SOUTH                                  Active                                                                                   NA                                                                 Scheduling Area    Y
+6 10Y1001A1001A91G      NORDIC_AREA                            Nordic Market Area                                  Active                                                                                   NA Outage Coordination Region, LFC Block, Capacity Calculation Region, Market Area    Y             
 ```
 
+The list `codeList` has 27 different tables inside. The following tables are available:
+
+```r
+names(REntsoE::codeList)
+ [1] "UnitOfMeasureTypeList"     "TarifTypeTypeList"         "StatusTypeList"            "RoleTypeList"              "RightsTypeList"            "ReasonCodeTypeList"       
+ [7] "QualityTypeList"           "ProcessTypeList"           "PriceDirectionTypeList"    "PriceCategoryTypeList"     "PaymentTermsTypeList"      "ObjectAggregationTypeList"
+[13] "IndicatorTypeList"         "EicTypeList"               "EnergyProductTypeList"     "DocumentTypeList"          "DirectionTypeList"         "CurveTypeList"            
+[19] "CurrencyTypeList"          "ContractTypeList"          "CodingSchemeTypeList"      "ClassificationTypeList"    "CategoryTypeList"          "BusinessTypeList"         
+[25] "AuctionTypeList"           "AssetTypeList"             "AllocationModeTypeList"  
+```
+
+Different data points require different variables. To date, following data points are implemented in the package. Behind the name, the used name from the [API documentation](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html#_load_domain) and from the [Knowledge Base](https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html) is included.
+
+-  Actual Total Load [6.1.A]                | - Day-Ahead Total Load Forecast [6.1.B]
+-  Week-Ahead Total Load Forecast [6.1.C]   | - Month-Ahead Total Load Forecast [6.1.D]
 
 
 
