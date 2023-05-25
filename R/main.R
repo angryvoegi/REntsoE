@@ -50,15 +50,18 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
   dates <- date_from_lst(onlyTS)
   values <- values_from_lst(onlyTS)
   final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  if(typeof(fArgs$processType) == "symbol"){ # if pulled data does not contain processType
+    fArgs$processType <- "NotIn"
+  }
   if (fArgs$documentType %in% c("A65", "A72") &
-    fArgs$processType %in% c("A16")) {
+      fArgs$processType %in% c("A16")) {
     colnames(final) <- dynamic_colnames(
       df = final, rawdat = convResp,
       onlyTS_dat = onlyTS,
       codeList = codeList
     )
   } else if (fArgs$documentType %in% c("A65", "A70", "A71") &
-    fArgs$processType %in% c("A01", "A31", "A32", "A33")) {
+             fArgs$processType %in% c("A01", "A31", "A32", "A33")) {
     final <- split_columns(df = final, rawdat = convResp)
     colnames(final) <- dynamic_colnames(
       df = final, rawdat = convResp,
@@ -66,11 +69,16 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
       codeList = codeList
     )
   } else if (fArgs$documentType == "A61" &
-    fArgs$processType == "A01") {
+             fArgs$processType == "A01") {
     final <- split_columns(df = final, rawdat = convResp)
     final <- set_colnames(df = final, rawdat = convResp)
+  } else if (fArgs$contract_MarketAgreement.Type == "A01" &
+             fArgs$documentType == "A61") {
+    final <- split_columns(df = final, rawdat = convResp)
+    final <- set_colnames(df = final, rawdat = convResp)
+
   } else if (fArgs$documentType %in% c("A73") &
-    fArgs$processType %in% c("A01", "A16", "A18", "A40")) {
+             fArgs$processType %in% c("A01", "A16", "A18", "A40")) {
     final <- cbind(final,
       PSRType = type_from_list(
         rlst = convResp,
@@ -87,7 +95,7 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
       codeList = codeList
     )
   } else if (fArgs$documentType %in% c("A69", "A75") &
-    fArgs$processType %in% c("A01", "A18", "A16")) {
+             fArgs$processType %in% c("A01", "A18", "A16")) {
     final <- cbind(final,
       PSRType = type_from_list(
         rlst = convResp,
@@ -104,7 +112,7 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
       codeList = codeList, PSR = T
     )
   } else if (fArgs$documentType == "A68" &
-    fArgs$processType == "A33") {
+             fArgs$processType == "A33") {
     colnames(final) <- dynamic_colnames(
       df = final, rawdat = convResp,
       onlyTS_dat = onlyTS,
@@ -127,6 +135,7 @@ pull_data <- function(documentType, processType, contract_MarketAgreement.Type,
   }
   final <- final %>%
     mutate_if(is.character, as.numeric)
+  rownames(final) <- NULL
   return(final)
   message("Finished")
 }
