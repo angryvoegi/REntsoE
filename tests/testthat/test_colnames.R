@@ -171,3 +171,33 @@ test_that("Colnames day ahead forecast margin are set correctly", {
   expect_equal(colnames(fin)[2], "Scheduled Generation")
   expect_equal(colnames(fin)[3], "Scheduled Consumption")
 })
+
+
+test_that("Test colnames with PSR-type", {
+  mockFile <- "web-api.tp.entsoe.eu/A69A01.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  final <- cbind(final,
+                 PSRType = type_from_list(
+                   rlst = rlst,
+                   psrtype = codeList$AssetTypeList
+                 )
+  )
+  final <- reshape(final,
+                   direction = "wide", idvar = "Date",
+                   timevar = "PSRType", varying = unique(final$PSRType)
+  )
+  colnames(final) <- dynamic_colnames(
+    df = final, rawdat = rlst,
+    onlyTS_dat = onlyTS,
+    codeList = codeList, PSR = T
+  )
+  expect_equal(colnames(final)[1], "Date")
+  expect_equal(colnames(final)[2], "Day ahead Solar")
+  expect_equal(nrow(final), 8784)
+})
+
