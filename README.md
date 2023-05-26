@@ -11,12 +11,13 @@ The package is still being developed with the goal to pull every endpoint from t
 
 ## Installation
 
-The development version of the package can be installed from
+The development version of the package can be installed and loaded from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("angryvoegi/REntsoE")
+library(REntsoE)
 ```
 
 ## Pre-requisits
