@@ -66,3 +66,108 @@ test_that("Detect generation and consumption correctly", {
   gC <- generation_consumption(onlyTS)
   expect_equal(gC, "Consumption")
 })
+
+test_that("Detect generation and consumption correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A65A16.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  datas <- rlst
+  onlyTS <- only_ts(datas)
+  gC <- generation_consumption(onlyTS)
+  expect_equal(gC, "Consumption")
+})
+
+test_that("Colnames A71A33 are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A71A33.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Installed Capacity at the beginning of the year")
+})
+
+test_that("Colnames wind and solar are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A68A33.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Value")
+})
+
+test_that("Colnames year ahead forecast margin are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A70A33.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Forecast margin")
+})
+
+test_that("Colnames week ahead total load are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A65A31.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  final <- split_columns(final, rlst)
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Min Total Load")
+  expect_equal(colnames(fin)[3], "Max Total Load")
+})
+
+test_that("Colnames actual total load are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A65A16.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Actual Total Load")
+})
+
+test_that("Colnames day ahead forecast margin are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A65A01.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Day-ahead Total Load Forecast")
+})
+
+test_that("Colnames day ahead forecast margin are set correctly", {
+  mockFile <- "web-api.tp.entsoe.eu/A71A01.R"
+  mock <- source(mockFile)
+  rlst <- convert_xml(mock$value)
+  onlyTS <- only_ts(rlst)
+  dates <- date_from_lst(onlyTS)
+  values <- values_from_lst(onlyTS)
+  final <- data.frame(Date = do.call("c", dates), Val = unlist(values))
+  final <- split_columns(final, rlst)
+  fin <- set_colnames(df = final, rawdat = rlst)
+  expect_equal(colnames(fin)[1], "Date")
+  expect_equal(colnames(fin)[2], "Scheduled Generation")
+  expect_equal(colnames(fin)[3], "Scheduled Consumption")
+})
