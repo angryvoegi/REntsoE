@@ -10,11 +10,11 @@ business_types(ts_dat)
 \item{ts_dat}{Response converted to onlyTS}
 }
 \value{
-Cector of business types
+Vector of business types
 }
 \description{
-Function gets the businesstype from raw data
+Function gets the businesstype from raw data.
 }
 \details{
-Function is subject to change.
+Function is subject to change. Lifecycle is experimental.
 }

@@ -7,15 +7,15 @@
 get_params(rlst)
 }
 \arguments{
-\item{rlst}{rlst raw list, converted xml response to list}
+\item{rlst}{Raw list, converted XML response to list}
 }
 \value{
 named list with the data
 }
 \description{
-Pull the different parameters from the original object
+Pull the different parameters from the original object.
 }
 \details{
 Function extracts the Process Type, Business type,
-objkect aggregation, Measurment unit and curve type
+object aggregation, Measurement unit and curve type.
 }

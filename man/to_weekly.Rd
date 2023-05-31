@@ -7,13 +7,14 @@
 to_weekly(df, type = c("mean", "median", "sum"))
 }
 \arguments{
-\item{df}{Dataframe pulled from the API}
+\item{df}{Finished data frame returned from `pull_data`}
 
 \item{type}{Type of aggregation. One can choose between `mean`, `median` and
 `sum`}
 }
 \description{
-Function takes the pulled data (dataframe) and converts it to weekly.
+Function takes the finished data frame and converts it to a weekly
+ts. There are three different aggregation methods.
 }
 \details{
 A new column is added (week) derived from the date column.

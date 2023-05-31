@@ -7,7 +7,7 @@
 type_from_list(rlst, psrtype)
 }
 \arguments{
-\item{rlst}{Rlst raw list, converted xml response to list}
+\item{rlst}{Rlst raw list, converted XML response to list}
 
 \item{psrtype}{PSR Type from codeList$AssetTypeList (excel data)}
 }
@@ -16,9 +16,9 @@ Returns named vector with the PSR types in order of them being
 in the data
 }
 \description{
-Extract the PSR Code and convert code to name
+Extract the PSR Code and convert code to name.
 }
 \details{
 Function extracts the PSR Type (and Text) and generates a list
-Is used to append to data and know what type it is (e.g. [14.1.D])
+Is used to append to data and know what type it is (e.g. [14.1.D]).
 }

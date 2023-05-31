@@ -7,13 +7,13 @@
 dynamic_colnames(df, rawdat, onlyTS_dat, codeList, PSR = FALSE)
 }
 \arguments{
-\item{df}{Final dataframe (without proper colnames)}
+\item{df}{Final data frame (without proper colnames)}
 
 \item{rawdat}{Converted XML response to list}
 
-\item{onlyTS_dat}{List of data containing only the timeseries data}
+\item{onlyTS_dat}{List of data containing only the time series data}
 
-\item{codeList}{CodeList (dataframe that comes with this package)}
+\item{codeList}{CodeList (data frame that comes with this package)}
 
 \item{PSR}{If PSR is true, old colnames and process names are pasted together to
 form the new colnames}
@@ -22,7 +22,8 @@ form the new colnames}
 Vector with correct colnames
 }
 \description{
-Function dynamically craetes colnames
+Function dynamically creates colnames. Used for each
+unique data point.
 }
 \details{
 Append the processtype (e.g. intraday total) to the colnames. This

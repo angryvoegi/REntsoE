@@ -2,24 +2,24 @@
 % Please edit documentation in R/handle_colnames.R
 \name{set_colnames}
 \alias{set_colnames}
-\title{Set colnames of final dataframe}
+\title{Set colnames of final data frame}
 \usage{
 set_colnames(df, rawdat)
 }
 \arguments{
-\item{df}{Dataframe with date, value and possible more information}
+\item{df}{Data frame with date, value and possible more information}
 
 \item{rawdat}{Converted XML response to list}
 }
 \value{
-Returns dataframe with set colnames
+Returns data frame with set colnames
 }
 \description{
-Function sets colnames based on parameters
+Function sets colnames based on the returned parameters.
 }
 \details{
 With the function `get_params` all parameters from the raw data
 is pulled. From that, the function determines the appropriate
 colnames. The function checks if the input is in the correct
-format (dataframe).
+format (data frame).
 }

@@ -32,7 +32,7 @@ build_url(
 
 \item{auction.Type}{Type of auction, buy or sell}
 
-\item{psrType}{Tpy of generation, e.g. wind, solar, nuclear etc.}
+\item{psrType}{Type of generation, e.g. wind, solar, nuclear etc.}
 
 \item{Area_Domain}{Domain Area}
 
@@ -42,7 +42,7 @@ build_url(
 
 \item{registeredResource}{Which generation unit}
 
-\item{businessType}{Identification of the nature of timeseries}
+\item{businessType}{Identification of the nature of time series}
 
 \item{periodStart}{Starting point}
 
@@ -54,7 +54,7 @@ build_url(
 String of url to make request
 }
 \description{
-Dynamically build the right URL for your request
+Dynamically build the right URL for your request.
 }
 \details{
 This function builds the url to get the data.

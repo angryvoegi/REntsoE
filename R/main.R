@@ -2,14 +2,14 @@
 #' Pull data from the API
 #'
 #' @description
-#' Function to pull the data from the Entso-E API.
+#' Function to pull the data from the Entso-E API. The function
+#' combines all functions from the package to be as dynamic
+#' as possible. It handles all implemented data points (see github).
 #'
 #' @details
 #' Function uses each element of this package. It build the url, pull the data and
-#' converts it in the appropriate manner. The funciton is complex because different
-#' types of datapoints need different treatment.
-#'
-#'
+#' converts it in the appropriate manner. The function is complex because different
+#' types of data points need different treatment.
 #'
 #' @import dplyr httr tidyr xml2
 #'
@@ -23,11 +23,11 @@
 #' @param in_Domain From where
 #' @param out_Domain To where
 #' @param registeredResource Which generation unit
-#' @param businessType Identification of the nature of timeseries
+#' @param businessType Identification of the nature of time series
 #' @param periodStart Starting point
 #' @param periodEnd End point
 #'
-#' @return Dataframe
+#' @return Returns the finished data frame
 #'
 #' @export
 #' @importFrom stats reshape

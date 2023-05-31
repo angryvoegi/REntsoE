@@ -10,10 +10,10 @@ api_error(req)
 \item{req}{Response from the API call}
 }
 \description{
-Function checks the API status code
+Function checks the API status code.
 }
 \details{
 Based on the API status code, the function evaluates
 if the response is valid or not. If not, a message is
-displayed
+displayed.
 }

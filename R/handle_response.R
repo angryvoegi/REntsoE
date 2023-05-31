@@ -2,12 +2,13 @@
 #' Return only "TimeSeries" objects
 #'
 #' @description
-#' Function which only return "TimeSeries" objects
+#' Function which only return "TimeSeries" objects. It extracts the "TimeSeries"
+#' tag from the converted response and returns a list with only these elements.
 #'
 #' @details
 #' The response from the Entso-E API has a lot of
 #' different elements called "TimeSeries". These elements
-#' inlcude all the necessary information like point and
+#' include all the necessary information like point and
 #' value. This function extracts all the elements with the
 #' name "TimeSeries".
 #'
@@ -23,17 +24,19 @@ only_ts <- function(rlst) {
 #' Get the date from point
 #'
 #' @description
-#' Function converts points to date&time
+#' Function converts points to date&time. It takes the start
+#' date from the API response as well as the number of points and
+#' the periodicity to calculate the date sequence from that.
 #'
 #' @details
 #' Function uses the `start` data point which is returned
-#' by the API as a refference point. From that, it creates a sequence
+#' by the API as a reference point. From that, it creates a sequence
 #' with the periodicity of the response as well as the number of
 #' points returned by the call. This sequence represents the dates
 #' in the response.
 #'
 #' @param start StartInterval from the API response
-#' @param n_points Number of datapoints
+#' @param n_points Number of data points
 #' @param period Periodicity of the response
 #'
 #' @return Date sequence from start with length.out = n_points
@@ -94,7 +97,7 @@ date_from_lst <- function(lst_ts) {
 #' Get values from response
 #'
 #' @description
-#' Using the `only_ts` function, this function returns only the values
+#' Using the `only_ts` function, this function returns only the values.
 #'
 #' @details
 #' Function pulls all the values from the response list (output from
@@ -105,12 +108,9 @@ date_from_lst <- function(lst_ts) {
 #'
 #' @return List with only values
 values_from_lst <- function(lst_ts) {
-  # lst_ts = dat2
   vals_lst <- lapply(lst_ts, function(x) {
-    # x = lst_ts[[1]]
     points <- x$Period[names(x$Period) == "Point"]
     vals_lst <- lapply(points, function(y) {
-      # y = points[[1]]
       y$quantity
     }) %>%
       unlist() %>%

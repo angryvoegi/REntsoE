@@ -13,11 +13,11 @@ convert_xml(xml)
 List of response
 }
 \description{
-`convert_xml` returns a list from a xml response
+`convert_xml` returns a list from a XML response.
 }
 \details{
-This function converts the xml response to a list
+This function converts the XML response to a list
 From that list, the timeInterval, the period and
 the raw data is extracted and returned as a list
-with three sublists
+with three sub-lists.
 }

@@ -10,7 +10,7 @@ set_apikey(key)
 \item{key}{The ENSTO-E API Key}
 }
 \description{
-`set_apikey` sets your API key to the environment variable
+`set_apikey` sets your API key to the environment variable *ENTSOE_KEY*.
 }
 \details{
 This function sets the API Key to the environment

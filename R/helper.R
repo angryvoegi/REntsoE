@@ -6,7 +6,7 @@ library(dplyr)
 #' Set your API key
 #'
 #' @description
-#' `set_apikey` sets your API key to the environment variable
+#' `set_apikey` sets your API key to the environment variable *ENTSOE_KEY*.
 #'
 #' @details
 #' This function sets the API Key to the environment
@@ -33,13 +33,13 @@ set_apikey <- function(key) {
 #' Convert XML to list
 #'
 #' @description
-#' `convert_xml` returns a list from a xml response
+#' `convert_xml` returns a list from a XML response.
 #'
 #' @details
-#' This function converts the xml response to a list
+#' This function converts the XML response to a list
 #' From that list, the timeInterval, the period and
 #' the raw data is extracted and returned as a list
-#' with three sublists
+#' with three sub-lists.
 #'
 #' @param xml Response object from the api call
 #'
@@ -47,7 +47,6 @@ set_apikey <- function(key) {
 #' @importFrom httr content
 #' @importFrom xml2 as_list
 convert_xml <- function(xml) {
-  # convert xml to list
   tmp <- httr::content(xml, encoding = "UTF-8") %>%
     xml2::as_list()
   temp <- tmp$GL_MarketDocument
@@ -62,12 +61,12 @@ convert_xml <- function(xml) {
 #' Catch API errors
 #'
 #' @description
-#' Function checks the API status code
+#' Function checks the API status code.
 #'
 #' @details
 #' Based on the API status code, the function evaluates
 #' if the response is valid or not. If not, a message is
-#' displayed
+#' displayed.
 #'
 #' @param req Response from the API call
 api_error <- function(req) {

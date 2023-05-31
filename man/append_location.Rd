@@ -2,21 +2,21 @@
 % Please edit documentation in R/handle_location.R
 \name{append_location}
 \alias{append_location}
-\title{Add location to dataframe}
+\title{Add location to data frame}
 \usage{
 append_location(df, rawdat)
 }
 \arguments{
-\item{df}{Final dataframe with the aggregated data}
+\item{df}{Final data frame with the aggregated data}
 
 \item{rawdat}{Locations as text not EIC}
 }
 \value{
-Dataframe
+Data frame
 }
 \description{
-Function calls the `get_Locations` function to get the country/location name
+Function calls the `get_Locations` function to get the country/location name.
 }
 \details{
-Adds a column to the finished dataframe, appending the corresponding locations
+Adds a column to the finished data frame, appending the corresponding locations.
 }

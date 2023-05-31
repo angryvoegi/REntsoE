@@ -9,17 +9,17 @@ get_Locations(rawdat, eicLoc)
 \arguments{
 \item{rawdat}{Converted XML response to list}
 
-\item{eicLoc}{Dataframe that comes with the package (see eicLoc)}
+\item{eicLoc}{Data frame that comes with the package (see eicLoc)}
 }
 \value{
 Returns a vector with the locations
 }
 \description{
 Function takes the mRID from the pulled data and matches
-it with the `eicLoc` dataframe to get the real name
+it with the `eicLoc` data frame to get the real name.
 }
 \details{
 Takes all the unique Resource mRIDs from the raw data
 and matches them to the eicLoc table, extracting the name
-of the power plan
+of the power plan.
 }

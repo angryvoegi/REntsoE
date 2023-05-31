@@ -9,7 +9,7 @@ points_to_time(start, n_points, period)
 \arguments{
 \item{start}{StartInterval from the API response}
 
-\item{n_points}{Number of datapoints}
+\item{n_points}{Number of data points}
 
 \item{period}{Periodicity of the response}
 }
@@ -18,11 +18,13 @@ Date sequence from start with length.out = n_points
 and period = periodicity
 }
 \description{
-Function converts points to date&time
+Function converts points to date&time. It takes the start
+date from the API response as well as the number of points and
+the periodicity to calculate the date sequence from that.
 }
 \details{
 Function uses the `start` data point which is returned
-by the API as a refference point. From that, it creates a sequence
+by the API as a reference point. From that, it creates a sequence
 with the periodicity of the response as well as the number of
 points returned by the call. This sequence represents the dates
 in the response.

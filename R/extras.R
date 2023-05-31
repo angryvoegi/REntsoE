@@ -1,20 +1,21 @@
 #' @title
-#' Convert to yealy
+#' Convert to yearly
 #'
 #' @description
-#' Function takes tha pulled data (dataframe) and converts it to yearly.
+#' Function takes the finished data frame and converts it to a yearly
+#' ts. There are three different aggregation methods.
 #'
 #' @details
 #' A new column is added (year) derived from the date column.
 #' The `type` argument specifies the type of the aggregation.
 #' With the added columns, a aggregation is made.
 #'
-#' @param df Dataframe pulled from the API
-#' @param type Type of aggregation. One can choose between `mean`, `median` and
+#' @param df Finished data frame returned from `pull_data`
+#' @param type Method of aggregation. One can choose between `mean`, `median` and
 #' `sum`.
 #'
 #' @return
-#' Converted dataframe
+#' Converted data frame
 #' @export
 #'
 #' @importFrom stats median
@@ -35,15 +36,16 @@ to_yearly <- function(df, type = c("mean", "median", "sum")){
 #' Convert to Monthly
 #'
 #' @description
-#' Function takes the pulled data (dataframe) and converts it to monthly.
+#' Function takes the finished data frame and converts it to a monthly
+#' ts. There are three different aggregation methods.
 #'
 #' @details
 #' Two new columns are added (year, month) derived from the date column.
 #' The `type` argument specifies the type of the aggregation.
 #' With the added columns, a aggregation is made.
 #'
-#' @param df Dataframe pulled from the API
-#' @param type Type of aggregation. One can choose between `mean`, `median` and
+#' @param df Finished data frame returned from `pull_data`
+#' @param type Method of aggregation. One can choose between `mean`, `median` and
 #' `sum`
 #'
 #' @export
@@ -71,14 +73,15 @@ to_monthly <- function(df, type = c("mean", "median", "sum")){
 #' Convert to Weekly
 #'
 #' @description
-#' Function takes the pulled data (dataframe) and converts it to weekly.
+#' Function takes the finished data frame and converts it to a weekly
+#' ts. There are three different aggregation methods.
 #'
 #' @details
 #' A new column is added (week) derived from the date column.
 #' The `type` argument specifies the type of the aggregation.
 #' With the added columns, a aggregation is made.
 #'
-#' @param df Dataframe pulled from the API
+#' @param df Finished data frame returned from `pull_data`
 #' @param type Type of aggregation. One can choose between `mean`, `median` and
 #' `sum`
 #'
@@ -100,13 +103,14 @@ to_weekly <- function(df, type = c("mean", "median", "sum")){
 #' Convert to Daily
 #'
 #' @description
-#' Function takes the pulled data (dataframe) and converts it to daily
+#' Function takes the finished data frame and converts it to a daily
+#' ts. There are three different aggregation methods.
 #'
 #' @details
 #' The `type` argument specifies the type of the aggregation.
 #' With the date column, the data is being aggregated.
 #'
-#' @param df Dataframe pulled from the API
+#' @param df Finished data frame returned from `pull_data`
 #' @param type Type of aggregation. One can choose between `mean`, `median` and
 #' `sum`
 #'

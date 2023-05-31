@@ -7,13 +7,14 @@
 to_monthly(df, type = c("mean", "median", "sum"))
 }
 \arguments{
-\item{df}{Dataframe pulled from the API}
+\item{df}{Finished data frame returned from `pull_data`}
 
-\item{type}{Type of aggregation. One can choose between `mean`, `median` and
+\item{type}{Method of aggregation. One can choose between `mean`, `median` and
 `sum`}
 }
 \description{
-Function takes the pulled data (dataframe) and converts it to monthly.
+Function takes the finished data frame and converts it to a monthly
+ts. There are three different aggregation methods.
 }
 \details{
 Two new columns are added (year, month) derived from the date column.

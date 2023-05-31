@@ -41,20 +41,22 @@ pull_data(
 
 \item{registeredResource}{Which generation unit}
 
-\item{businessType}{Identification of the nature of timeseries}
+\item{businessType}{Identification of the nature of time series}
 
 \item{periodStart}{Starting point}
 
 \item{periodEnd}{End point}
 }
 \value{
-Dataframe
+Returns the finished data frame
 }
 \description{
-Function to pull the data from the Entso-E API.
+Function to pull the data from the Entso-E API. The function
+combines all functions from the package to be as dynamic
+as possible. It handles all implemented data points (see github).
 }
 \details{
 Function uses each element of this package. It build the url, pull the data and
-converts it in the appropriate manner. The funciton is complex because different
-types of datapoints need different treatment.
+converts it in the appropriate manner. The function is complex because different
+types of data points need different treatment.
 }

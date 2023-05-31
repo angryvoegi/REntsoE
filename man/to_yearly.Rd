@@ -2,21 +2,22 @@
 % Please edit documentation in R/extras.R
 \name{to_yearly}
 \alias{to_yearly}
-\title{Convert to yealy}
+\title{Convert to yearly}
 \usage{
 to_yearly(df, type = c("mean", "median", "sum"))
 }
 \arguments{
-\item{df}{Dataframe pulled from the API}
+\item{df}{Finished data frame returned from `pull_data`}
 
-\item{type}{Type of aggregation. One can choose between `mean`, `median` and
+\item{type}{Method of aggregation. One can choose between `mean`, `median` and
 `sum`.}
 }
 \value{
-Converted dataframe
+Converted data frame
 }
 \description{
-Function takes tha pulled data (dataframe) and converts it to yearly.
+Function takes the finished data frame and converts it to a yearly
+ts. There are three different aggregation methods.
 }
 \details{
 A new column is added (year) derived from the date column.

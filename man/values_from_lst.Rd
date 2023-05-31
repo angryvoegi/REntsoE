@@ -13,7 +13,7 @@ values_from_lst(lst_ts)
 List with only values
 }
 \description{
-Using the `only_ts` function, this function returns only the values
+Using the `only_ts` function, this function returns only the values.
 }
 \details{
 Function pulls all the values from the response list (output from

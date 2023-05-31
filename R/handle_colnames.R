@@ -1,8 +1,13 @@
 ## For Transmission mainly
-#' Function pulls the name of the location from the eic code
+#' @name
+#' Get short display names
+#'
+#' @description
+#' Function pulls the name of the location from the eic code.
+#'
 #'
 #' @param rlst Rlst raw list, converted xml response to list
-#' @param eic Dataframe with the area codes (areaY from the entso e website)
+#' @param eic Data frame with the area codes (areaY from the Entso-E website)
 #'
 #' @return Short display name of the country/region/area
 get_displayName <- function(rlst, eic) {
@@ -14,21 +19,21 @@ get_displayName <- function(rlst, eic) {
 }
 
 #' @title
-#' Set colnames of final dataframe
+#' Set colnames of final data frame
 #'
 #' @description
-#' Function sets colnames based on parameters
+#' Function sets colnames based on the returned parameters.
 #'
 #' @details
 #' With the function `get_params` all parameters from the raw data
 #' is pulled. From that, the function determines the appropriate
 #' colnames. The function checks if the input is in the correct
-#' format (dataframe).
+#' format (data frame).
 #'
-#' @param df Dataframe with date, value and possible more information
+#' @param df Data frame with date, value and possible more information
 #' @param rawdat Converted XML response to list
 #'
-#' @return Returns dataframe with set colnames
+#' @return Returns data frame with set colnames
 #' @importFrom dplyr case_when
 set_colnames <- function(df, rawdat) {
   params <- get_params(rawdat)
@@ -95,16 +100,17 @@ set_colnames <- function(df, rawdat) {
 #' Create dynamic colnames
 #'
 #' @description
-#' Function dynamically craetes colnames
+#' Function dynamically creates colnames. Used for each
+#' unique data point.
 #'
 #' @details
 #' Append the processtype (e.g. intraday total) to the colnames. This
 #' is done with the `get_params` function.
 #'
-#' @param df Final dataframe (without proper colnames)
+#' @param df Final data frame (without proper colnames)
 #' @param rawdat Converted XML response to list
-#' @param codeList CodeList (dataframe that comes with this package)
-#' @param onlyTS_dat List of data containing only the timeseries data
+#' @param codeList CodeList (data frame that comes with this package)
+#' @param onlyTS_dat List of data containing only the time series data
 #' @param PSR If PSR is true, old colnames and process names are pasted together to
 #' form the new colnames
 #'
@@ -140,14 +146,14 @@ dynamic_colnames <- function(df, rawdat, onlyTS_dat, codeList, PSR = FALSE) {
 #' Get Business Types
 #'
 #' @description
-#' Function gets the businesstype from raw data
+#' Function gets the businesstype from raw data.
 #'
 #' @details
-#' Function is subject to change.
+#' Function is subject to change. Lifecycle is experimental.
 #'
 #' @param ts_dat Response converted to onlyTS
 #'
-#' @return Cector of business types
+#' @return Vector of business types
 business_types <- function(ts_dat) {
   all_bsn_types <- lapply(ts_dat, function(x) {
     x$businessType

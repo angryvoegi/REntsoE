@@ -13,12 +13,13 @@ only_ts(rlst)
 Only the lists which are named TimeSeries
 }
 \description{
-Function which only return "TimeSeries" objects
+Function which only return "TimeSeries" objects. It extracts the "TimeSeries"
+tag from the converted response and returns a list with only these elements.
 }
 \details{
 The response from the Entso-E API has a lot of
 different elements called "TimeSeries". These elements
-inlcude all the necessary information like point and
+include all the necessary information like point and
 value. This function extracts all the elements with the
 name "TimeSeries".
 }

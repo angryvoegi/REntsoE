@@ -2,7 +2,7 @@
 #' Build URL
 #'
 #' @description
-#' Dynamically build the right URL for your request
+#' Dynamically build the right URL for your request.
 #'
 #' @details
 #' This function builds the url to get the data.
@@ -15,12 +15,12 @@
 #' @param contract_MarketAgreement.Type Type of Contract
 #' @param outBiddingZone_Domain Country from which the data should be pulled
 #' @param auction.Type Type of auction, buy or sell
-#' @param psrType Tpy of generation, e.g. wind, solar, nuclear etc.
+#' @param psrType Type of generation, e.g. wind, solar, nuclear etc.
 #' @param Area_Domain Domain Area
 #' @param in_Domain From where
 #' @param out_Domain To where
 #' @param registeredResource Which generation unit
-#' @param businessType Identification of the nature of timeseries
+#' @param businessType Identification of the nature of time series
 #' @param periodStart Starting point
 #' @param periodEnd End point
 #' @param key Should the API-Key be included (mainly for testing purpose)?
